@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Infaq</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Kalkulator penghitung infaq</h1>
+
+      <div class="input-group">
+        <label>100 Ribu</label>
+        <input
+          type="number"
+          id="uang100rb"
+          min="0"
+          value=""
+          oninput="hitungTotal()"
+        />
+      </div>
+
+      <div class="input-group">
+        <label>75 Ribu</label>
+        <input
+          type="number"
+          id="uang75rb"
+          min="0"
+          value=""
+          oninput="hitungTotal()"
+        />
+      </div>
+
+      <div class="input-group">
+        <label>50 Ribu</label>
+        <input
+          type="number"
+          id="uang50rb"
+          min="0"
+          value=""
+          oninput="hitungTotal()"
+        />
+      </div>
+      <div class="input-group">
+        <label>20 Ribu</label>
+        <input
+          type="number"
+          id="uang20rb"
+          min="0"
+          value=""
+          oninput="hitungTotal()"
+        />
+      </div>
+      <div class="input-group">
+        <label>10 Ribu</label>
+        <input
+          type="number"
+          id="uang10rb"
+          min="0"
+          value=""
+          oninput="hitungTotal()"
+        />
+      </div>
+      <div class="input-group">
+        <label>5 Ribu</label>
+        <input
+          type="number"
+          id="uang5rb"
+          min="0"
+          value=""
+          oninput="hitungTotal()"
+        />
+      </div>
+      <div class="input-group">
+        <label>2 Ribu</label>
+        <input
+          type="number"
+          id="uang2rb"
+          min="0"
+          value=""
+          oninput="hitungTotal()"
+        />
+      </div>
+      <div class="input-group">
+        <label>1 Ribu</label>
+        <input
+          type="number"
+          id="uang1rb"
+          min="0"
+          value=""
+          oninput="hitungTotal()"
+        />
+      </div>
+      <div class="input-group">
+        <label>500 Rupiah</label>
+        <input
+          type="number"
+          id="uang500"
+          min="0"
+          value=""
+          oninput="hitungTotal()"
+        />
+      </div>
+      <div class="input-group">
+        <label>200 Rupiah</label>
+        <input
+          type="number"
+          id="uang200"
+          min="0"
+          value=""
+          oninput="hitungTotal()"
+        />
+      </div>
+      <div class="input-group">
+        <label>100 Rupiah</label>
+        <input
+          type="number"
+          id="uang100"
+          min="0"
+          value=""
+          oninput="hitungTotal()"
+        />
+      </div>
+
+      <div class="total-container">
+        <div class="total-row">
+          <span>Total:</span>
+          <span id="total" class="total-value">Rp 0</span>
+        </div>
+      </div>
+
+      <button class="reset-btn" onclick="resetForm()">Reset</button>
+    </div>
+  </body>
+</html>
