@@ -1,11 +1,23 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-@keyframes gradientAnimation {
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    padding: 20px;
+}
+
+@keyframes gradient {
     0% {
         background-position: 0% 50%;
     }
@@ -17,166 +29,273 @@
     }
 }
 
-body {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
 .container {
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    padding: 30px;
     width: 100%;
-    max-width: 500px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    color: #333;
 }
 
 h1 {
     text-align: center;
-    color: #2d3748;
-    margin-bottom: 24px;
-    font-size: 24px;
-    font-weight: 600;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #1a237e;
 }
 
-.input-group {
+.header-emoji {
+    font-size: 2rem;
+    display: inline-block;
+    margin: 0 10px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(10deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+.money-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.kertas, .logam {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
+}
+
+h2 {
     display: flex;
     align-items: center;
-    margin-bottom: 12px;
-    position: relative;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
 }
 
-.input-group label {
-    flex: 1;
-    font-size: 16px;
+h2 span {
+    margin-left: 10px;
+    animation: wiggle 2s ease-in-out infinite;
+    display: inline-block;
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(15deg); }
+    75% { transform: rotate(-15deg); }
+}
+
+.money-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.money-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid #eaeaea;
+}
+
+.money-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+.money-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    min-width: 30px;
+    text-align: center;
+    animation: pulse 2s infinite;
+    display: inline-block;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.money-details {
+    flex-grow: 1;
+}
+
+.money-label {
     font-weight: 500;
-    color: #4a5568;
+    margin-bottom: 5px;
+    color: #333;
 }
 
-.input-group input {
-    flex: 1;
-    padding: 12px 16px;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    font-size: 16px;
-    text-align: right;
-    transition: all 0.3s;
+.money-input {
     width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 5px;
+    color: #333;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s ease;
 }
 
-.input-group input:focus {
-    outline: none;
-    border-color: #4299e1;
-    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+.money-input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.money-input::placeholder {
+    color: #aaa;
+}
+
+.money-value {
+    margin-top: 5px;
+    font-weight: 600;
+    text-align: right;
+    color: #2e7d32;
 }
 
 .total-container {
-    margin-top: 24px;
-    padding-top: 20px;
-    border-top: 2px dashed #5f6771;
+    margin-top: 30px;
+    background: linear-gradient(135deg, #f5f7fa, #e4e8eb);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.total-row {
+.total-container h2 {
+    justify-content: center;
+    margin-bottom: 20px;
+    color: #1a237e;
+}
+
+.total-values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.total-item {
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid #eaeaea;
+}
+
+.total-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.total-label {
+    font-weight: 500;
+    margin-bottom: 10px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    font-size: 18px;
-    font-weight: 600;
-    color: #2d3748;
+    justify-content: center;
+    color: #333;
+}
+
+.total-label span {
+    margin-left: 8px;
+    display: inline-block;
+    animation: swing 2s ease infinite;
+}
+
+@keyframes swing {
+    0%, 100% { transform: rotate(0); }
+    20% { transform: rotate(15deg); }
+    40% { transform: rotate(-10deg); }
+    60% { transform: rotate(5deg); }
+    80% { transform: rotate(-5deg); }
 }
 
 .total-value {
-    font-size: 24px;
-    color: #3182ce
-}
-
-.breakdown-container {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: rgba(237, 242, 247, 0.7);
-    border-radius: 8px;
-    max-height: 200px;
-    overflow-y: auto;
-}
-
-.breakdown-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 6px 0;
-    border-bottom: 1px solid #e2e8f0;
-    font-size: 14px;
-}
-
-.breakdown-item:last-child {
-    border-bottom: none;
-}
-
-.copy-btn {
-    display: block;
-    width: 100%;
-    margin-top: 15px;
-    padding: 12px;
-    background: linear-gradient(45deg, #805ad5, #6b46c1);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 500px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.copy-btn:hover {
-    background: linear-gradient(45deg, #6b46c1, #553c9a);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(107, 70, 193, 0.3)
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e88e5;
 }
 
 .reset-btn {
     display: block;
-    width: 100%;
-    margin-top: 10px;
-    padding: 12px;
-    background: linear-gradient(45deg, #3182ce, #4299e1);
-    color: white;
+    margin: 30px auto 0;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 500;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .reset-btn:hover {
-    background: linear-gradient(45deg, #2c5282, #3182ce);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(29, 130, 206, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* responsive adjusment */
-@media (max-width: 600px) {
-    .container{
+.reset-btn:active {
+    transform: translateY(0);
+}
+
+.reset-btn span {
+    display: inline-block;
+    animation: spin 3s linear infinite;
+    margin-left: 5px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .container {
         padding: 20px;
     }
-
-    .input-group {
-        flex-direction: column;
-        align-items: flex-start;
+    
+    h1 {
+        font-size: 2rem;
     }
-
-    .input-group label {
-        margin-bottom: 8px;
+    
+    .money-grid {
+        grid-template-columns: 1fr;
     }
+    
+    .total-values {
+        grid-template-columns: 1fr;
+    }
+}
 
-    .input-group input {
-        width: 100%;
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .money-item, .total-item {
+        padding: 12px;
     }
 }
