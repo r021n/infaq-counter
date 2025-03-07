@@ -1,142 +1,244 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kalkulator Infaq</title>
+    <title>Penghitung Uang</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
   </head>
   <body>
     <div class="container">
-      <h1>Kalkulator penghitung infaq</h1>
+      <h1>Penghitung Uang</h1>
 
-      <div class="input-group">
-        <label>100 Ribu</label>
-        <input
-          type="number"
-          id="uang100rb"
-          min="0"
-          value=""
-          oninput="hitungTotal()"
-        />
-      </div>
+      <div class="money-container">
+        <div class="kertas">
+          <h2><span>💵</span> Uang Kertas</h2>
+          <div class="money-grid">
+            <div class="money-item">
+              <div class="money-icon">💴</div>
+              <div class="money-details">
+                <div class="money-label">Rp 100.000</div>
+                <input
+                  type="number"
+                  class="money-input"
+                  data-value="100000"
+                  placeholder="Jumlah lembar..."
+                  min="0"
+                />
+                <div class="money-value">Rp 0</div>
+              </div>
+            </div>
 
-      <div class="input-group">
-        <label>75 Ribu</label>
-        <input
-          type="number"
-          id="uang75rb"
-          min="0"
-          value=""
-          oninput="hitungTotal()"
-        />
-      </div>
+            <div class="money-item">
+              <div class="money-icon">💴</div>
+              <div class="money-details">
+                <div class="money-label">Rp 75.000</div>
+                <input
+                  type="number"
+                  class="money-input"
+                  data-value="75000"
+                  placeholder="Jumlah lembar..."
+                  min="0"
+                />
+                <div class="money-value">Rp 0</div>
+              </div>
+            </div>
 
-      <div class="input-group">
-        <label>50 Ribu</label>
-        <input
-          type="number"
-          id="uang50rb"
-          min="0"
-          value=""
-          oninput="hitungTotal()"
-        />
-      </div>
-      <div class="input-group">
-        <label>20 Ribu</label>
-        <input
-          type="number"
-          id="uang20rb"
-          min="0"
-          value=""
-          oninput="hitungTotal()"
-        />
-      </div>
-      <div class="input-group">
-        <label>10 Ribu</label>
-        <input
-          type="number"
-          id="uang10rb"
-          min="0"
-          value=""
-          oninput="hitungTotal()"
-        />
-      </div>
-      <div class="input-group">
-        <label>5 Ribu</label>
-        <input
-          type="number"
-          id="uang5rb"
-          min="0"
-          value=""
-          oninput="hitungTotal()"
-        />
-      </div>
-      <div class="input-group">
-        <label>2 Ribu</label>
-        <input
-          type="number"
-          id="uang2rb"
-          min="0"
-          value=""
-          oninput="hitungTotal()"
-        />
-      </div>
-      <div class="input-group">
-        <label>1 Ribu</label>
-        <input
-          type="number"
-          id="uang1rb"
-          min="0"
-          value=""
-          oninput="hitungTotal()"
-        />
-      </div>
-      <div class="input-group">
-        <label>500 Rupiah</label>
-        <input
-          type="number"
-          id="uang500"
-          min="0"
-          value=""
-          oninput="hitungTotal()"
-        />
-      </div>
-      <div class="input-group">
-        <label>200 Rupiah</label>
-        <input
-          type="number"
-          id="uang200"
-          min="0"
-          value=""
-          oninput="hitungTotal()"
-        />
-      </div>
-      <div class="input-group">
-        <label>100 Rupiah</label>
-        <input
-          type="number"
-          id="uang100"
-          min="0"
-          value=""
-          oninput="hitungTotal()"
-        />
+            <div class="money-item">
+              <div class="money-icon">💴</div>
+              <div class="money-details">
+                <div class="money-label">Rp 50.000</div>
+                <input
+                  type="number"
+                  class="money-input"
+                  data-value="50000"
+                  placeholder="Jumlah lembar..."
+                  min="0"
+                />
+                <div class="money-value">Rp 0</div>
+              </div>
+            </div>
+
+            <div class="money-item">
+              <div class="money-icon">💴</div>
+              <div class="money-details">
+                <div class="money-label">Rp 20.000</div>
+                <input
+                  type="number"
+                  class="money-input"
+                  data-value="20000"
+                  placeholder="Jumlah lembar..."
+                  min="0"
+                />
+                <div class="money-value">Rp 0</div>
+              </div>
+            </div>
+
+            <div class="money-item">
+              <div class="money-icon">💴</div>
+              <div class="money-details">
+                <div class="money-label">Rp 10.000</div>
+                <input
+                  type="number"
+                  class="money-input"
+                  data-value="10000"
+                  placeholder="Jumlah lembar..."
+                  min="0"
+                />
+                <div class="money-value">Rp 0</div>
+              </div>
+            </div>
+
+            <div class="money-item">
+              <div class="money-icon">💴</div>
+              <div class="money-details">
+                <div class="money-label">Rp 5.000</div>
+                <input
+                  type="number"
+                  class="money-input"
+                  data-value="5000"
+                  placeholder="Jumlah lembar..."
+                  min="0"
+                />
+                <div class="money-value">Rp 0</div>
+              </div>
+            </div>
+
+            <div class="money-item">
+              <div class="money-icon">💴</div>
+              <div class="money-details">
+                <div class="money-label">Rp 2.000</div>
+                <input
+                  type="number"
+                  class="money-input"
+                  data-value="2000"
+                  placeholder="Jumlah lembar..."
+                  min="0"
+                />
+                <div class="money-value">Rp 0</div>
+              </div>
+            </div>
+
+            <div class="money-item">
+              <div class="money-icon">💴</div>
+              <div class="money-details">
+                <div class="money-label">Rp 1.000</div>
+                <input
+                  type="number"
+                  class="money-input"
+                  data-value="1000"
+                  placeholder="Jumlah lembar..."
+                  min="0"
+                />
+                <div class="money-value">Rp 0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="logam">
+          <h2><span>🪙</span> Uang Logam</h2>
+          <div class="money-grid">
+            <div class="money-item">
+              <div class="money-icon">🪙</div>
+              <div class="money-details">
+                <div class="money-label">Rp 1.000</div>
+                <input
+                  type="number"
+                  class="money-input"
+                  data-value="1000"
+                  placeholder="Jumlah koin..."
+                  min="0"
+                />
+                <div class="money-value">Rp 0</div>
+              </div>
+            </div>
+
+            <div class="money-item">
+              <div class="money-icon">🪙</div>
+              <div class="money-details">
+                <div class="money-label">Rp 500</div>
+                <input
+                  type="number"
+                  class="money-input"
+                  data-value="500"
+                  placeholder="Jumlah koin..."
+                  min="0"
+                />
+                <div class="money-value">Rp 0</div>
+              </div>
+            </div>
+
+            <div class="money-item">
+              <div class="money-icon">🪙</div>
+              <div class="money-details">
+                <div class="money-label">Rp 200</div>
+                <input
+                  type="number"
+                  class="money-input"
+                  data-value="200"
+                  placeholder="Jumlah koin..."
+                  min="0"
+                />
+                <div class="money-value">Rp 0</div>
+              </div>
+            </div>
+
+            <div class="money-item">
+              <div class="money-icon">🪙</div>
+              <div class="money-details">
+                <div class="money-label">Rp 100</div>
+                <input
+                  type="number"
+                  class="money-input"
+                  data-value="100"
+                  placeholder="Jumlah koin..."
+                  min="0"
+                />
+                <div class="money-value">Rp 0</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="total-container">
-        <div class="total-row">
-          <span>Total:</span>
-          <span id="total" class="total-value">Rp 0</span>
-        </div>
-        <div class="breakdown-container" id="breakdown-container">
-          <!-- breakdown container will be inserted here by javascript -->
+        <h2><span>✨</span> Total <span>✨</span></h2>
+        <div class="total-values">
+          <div class="total-item">
+            <div class="total-label">
+              Uang Kertas
+              <span>💵</span>
+            </div>
+            <div class="total-value" id="total-kertas">Rp 0</div>
+          </div>
+
+          <div class="total-item">
+            <div class="total-label">
+              Uang Logam
+              <span>🪙</span>
+            </div>
+            <div class="total-value" id="total-logam">Rp 0</div>
+          </div>
+
+          <div class="total-item">
+            <div class="total-label">
+              Total Keseluruhan
+              <span>🤑</span>
+            </div>
+            <div class="total-value" id="total-semua">Rp 0</div>
+          </div>
         </div>
       </div>
 
-      <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
-
-      <button class="reset-btn" onclick="resetForm()">Reset</button>
+      <button class="reset-btn" id="reset-btn">
+        Reset Semua <span>🔄</span>
+      </button>
     </div>
   </body>
 </html>
