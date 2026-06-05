@@ -11,125 +11,117 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
     padding: 20px;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
 }
 
 .container {
     width: 100%;
     max-width: 800px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    color: #333;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.03);
+    border: 1px solid #e2e8f0;
+    color: #1e293b;
 }
 
 h1 {
     text-align: center;
     margin-bottom: 30px;
     font-weight: 700;
-    font-size: 2.5rem;
-    color: #1a237e;
+    font-size: 2.2rem;
+    color: #0f172a;
+    letter-spacing: -0.5px;
 }
 
-.header-emoji {
-    font-size: 2rem;
+.material-symbols-outlined {
+    font-size: 1.5rem;
     display: inline-block;
-    margin: 0 10px;
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-10px) rotate(10deg); }
-    100% { transform: translateY(0) rotate(0deg); }
+    vertical-align: middle;
+    line-height: 1;
 }
 
 .money-container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 25px;
 }
 
-.kertas, .logam {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    border: 1px solid #f0f0f0;
+.kertas, .logam, .tambahan {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
 }
 
 h2 {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
-    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: #334155;
+    gap: 8px;
 }
 
-h2 span {
-    margin-left: 10px;
-    animation: wiggle 2s ease-in-out infinite;
-    display: inline-block;
+.kertas h2 span {
+    color: #10b981;
 }
 
-@keyframes wiggle {
-    0%, 100% { transform: rotate(0); }
-    25% { transform: rotate(15deg); }
-    75% { transform: rotate(-15deg); }
+.logam h2 span {
+    color: #f59e0b;
+}
+
+.tambahan h2 span {
+    color: #6366f1;
 }
 
 .money-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 16px;
+}
+
+.tambahan .money-grid {
+    grid-template-columns: 1fr;
 }
 
 .money-item {
     display: flex;
     align-items: center;
-    padding: 15px;
-    background: #f8f9fa;
+    padding: 16px;
+    background: #f8fafc;
     border-radius: 10px;
-    transition: all 0.3s ease;
-    border: 1px solid #eaeaea;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #e2e8f0;
 }
 
 .money-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    background: #fff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    background: #ffffff;
+    border-color: #cbd5e1;
 }
 
 .money-icon {
-    font-size: 1.5rem;
     margin-right: 15px;
     min-width: 30px;
     text-align: center;
-    animation: pulse 2s infinite;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+.kertas .money-icon {
+    color: #10b981;
+}
+
+.logam .money-icon {
+    color: #f59e0b;
+}
+
+.tambahan .money-icon {
+    color: #6366f1;
 }
 
 .money-details {
@@ -138,143 +130,111 @@ h2 span {
 
 .money-label {
     font-weight: 500;
-    margin-bottom: 5px;
-    color: #333;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: #334155;
 }
 
 .money-input {
     width: 100%;
     padding: 8px 12px;
-    border: 1px solid #ddd;
-    background: #fff;
-    border-radius: 5px;
-    color: #333;
-    font-size: 1rem;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    border-radius: 6px;
+    color: #1e293b;
+    font-size: 0.95rem;
     outline: none;
-    transition: border 0.3s ease;
+    transition: all 0.15s ease-in-out;
 }
 
 .money-input:focus {
-    border-color: #4a90e2;
-    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
 }
 
 .money-input::placeholder {
-    color: #aaa;
+    color: #94a3b8;
 }
 
 .money-value {
-    margin-top: 5px;
+    margin-top: 6px;
     font-weight: 600;
+    font-size: 0.9rem;
     text-align: right;
-    color: #2e7d32;
+    color: #059669;
 }
 
 .total-container {
-    margin-top: 30px;
-    background: linear-gradient(135deg, #f5f7fa, #e4e8eb);
-    padding: 20px;
-    border-radius: 15px;
+    margin-top: 35px;
+    background: #f8fafc;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.total-container {
+    margin-top: 35px;
+    background: #f8fafc;
+    padding: 30px 24px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.total-container h2 {
-    justify-content: center;
-    margin-bottom: 20px;
-    color: #1a237e;
-}
-
-.total-values {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-}
-
-.total-item {
-    padding: 15px;
-    background: white;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    border: 1px solid #eaeaea;
-}
-
-.total-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .total-label {
-    font-weight: 500;
-    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #333;
+    color: #475569;
+    gap: 8px;
 }
 
 .total-label span {
-    margin-left: 8px;
-    display: inline-block;
-    animation: swing 2s ease infinite;
-}
-
-@keyframes swing {
-    0%, 100% { transform: rotate(0); }
-    20% { transform: rotate(15deg); }
-    40% { transform: rotate(-10deg); }
-    60% { transform: rotate(5deg); }
-    80% { transform: rotate(-5deg); }
+    color: #059669;
 }
 
 .total-value {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    color: #1e88e5;
+    color: #059669;
 }
 
 .reset-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     margin: 30px auto 0;
-    padding: 12px 25px;
-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    padding: 12px 28px;
+    background: #64748b;
     border: none;
-    border-radius: 50px;
+    border-radius: 8px;
     color: white;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.15s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .reset-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
+    background: #475569;
 }
 
 .reset-btn:active {
-    transform: translateY(0);
-}
-
-.reset-btn span {
-    display: inline-block;
-    animation: spin 3s linear infinite;
-    margin-left: 5px;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    transform: translateY(1px);
 }
 
 @media (max-width: 768px) {
     .container {
-        padding: 20px;
+        padding: 24px;
     }
     
     h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .money-grid {
@@ -288,14 +248,14 @@ h2 span {
 
 @media (max-width: 480px) {
     .container {
-        padding: 15px;
+        padding: 16px;
     }
     
     h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
     
     .money-item, .total-item {
-        padding: 12px;
+        padding: 14px;
     }
 }
